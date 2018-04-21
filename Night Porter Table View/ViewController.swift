@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // Create [String] arrays of tasks
     let dailyTasks = ["Check all windows",
@@ -37,6 +37,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
 
+    // Table View Data Source Methods
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -82,6 +84,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         default:
             return nil
         }
+    }
+    
+    // Table View Delegate Methods
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You selected row \(indexPath.row) in section \(indexPath.section)")
     }
 }
 
