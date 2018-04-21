@@ -27,6 +27,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         "Test motion detectors",
                         "Test smoke alarms"]
 
+    @IBOutlet weak var tasksTableView: UITableView!
+    @IBOutlet weak var darkModeSwitch: UISwitch!
+    
     @IBAction func toggleDarkMode(_ sender: Any) {
         let mySwitch = sender as! UISwitch
         
@@ -35,6 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             view.backgroundColor = UIColor.white
         }
+        
+        tasksTableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -50,6 +55,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Table View Data Source Methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        tableView.backgroundColor = UIColor.clear
+        
         return 3
     }
     
@@ -78,6 +85,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.textLabel?.text = monthlyTasks[indexPath.row]
         default:
             cell.textLabel?.text = "This shouldn't happen"
+        }
+        
+        cell.backgroundColor = UIColor.clear
+        
+        if darkModeSwitch.isOn {
+            cell.textLabel?.textColor = UIColor.lightGray
+        } else {
+            cell.textLabel?.textColor = UIColor.black
         }
         
         return cell

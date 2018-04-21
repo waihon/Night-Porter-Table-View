@@ -36,6 +36,7 @@
                                         <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Ysu-mB-xQP">
                                             <rect key="frame" x="308" y="6.5" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="toggleDarkMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="F3V-Ju-4Ds"/>
                                             </connections>
@@ -53,6 +54,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="darkModeSwitch" destination="Ysu-mB-xQP" id="ZJy-nZ-AaK"/>
+                        <outlet property="tasksTableView" destination="2ER-KV-9UJ" id="Wwu-3E-UMT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
