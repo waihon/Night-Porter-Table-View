@@ -27,6 +27,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         "Test motion detectors",
                         "Test smoke alarms"]
 
+    @IBAction func toggleDarkMode(_ sender: Any) {
+        let mySwitch = sender as! UISwitch
+        
+        if mySwitch.isOn {
+            view.backgroundColor = UIColor.darkGray
+        } else {
+            view.backgroundColor = UIColor.white
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
